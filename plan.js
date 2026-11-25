@@ -1,0 +1,4 @@
+const easy=[6,7,8,6,8,8,6,4], long=[12,14,15,13,16,18,10,21.0975];
+const intervals=['Z4 4 × 2 min','Z4 5 × 2 min','Z4 4 × 3 min','Z4 3 × 2 min','Goal pace 2 × 15 min','Goal pace 2 × 20 min','Z4 3 × 2 min','Easy 3–4 km incl. 1–2 km goal pace'];
+const strength=['Squat — 2 × 12','Reverse lunge — 2 × 10 / side','Single-leg deadlift — 2 × 10 / side','Straight-knee calf raise — 2 × 15','Bent-knee calf raise — 2 × 15','Plank — 2 × 45 sec'];
+const plan=easy.map((km,i)=>[{type:'run',name:`Z2 ${km} km`,km},{type:'rest',name:'Rest'},{type:'run',name:intervals[i],interval:true},{type:i===7?'rest':'strength',name:i===7?'Rest':i===6?'Light strength':'Strength'},{type:i===7?'rest':'run',name:i===7?'Rest':'Z2 5 km',km:5},{type:'run',name:i===7?'Race 21.1 km':`Z2 ${long[i]} km`,km:long[i],race:i===7},{type:'rest',name:'Rest'}]);
